@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- Hình ảnh ở đầu bố cục -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="200dp"
@@ -12,6 +13,7 @@
         android:layout_gravity="center"
         app:srcCompat="@drawable/money" />
 
+    <!-- LinearLayout cho nhập ngày và nút lịch -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,6 +21,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginRight="16dp">
 
+        <!-- EditText cho nhập ngày -->
         <EditText
             android:id="@+id/editTextDate"
             android:layout_width="0dp"
@@ -28,7 +31,9 @@
             android:hint="Ngày"
             android:inputType="date" />
 
+        <!-- ImageButton cho biểu tượng lịch -->
         <ImageButton
+            android:id="@+id/buttonCalendar"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -36,6 +41,7 @@
             android:src="@drawable/calendar" />
     </LinearLayout>
 
+    <!-- EditText cho tên khoản chi tiêu -->
     <EditText
         android:id="@+id/editTextExpenseName"
         android:layout_width="match_parent"
@@ -45,6 +51,7 @@
         android:layout_marginRight="16dp"
         android:hint="Nội dung" />
 
+    <!-- EditText cho số tiền khoản chi tiêu -->
     <EditText
         android:id="@+id/editTextExpenseAmount"
         android:layout_width="match_parent"
@@ -55,18 +62,31 @@
         android:hint="Số tiền"
         android:inputType="numberDecimal" />
 
-        <Spinner
-            android:id="@+id/spinnerExpenseCategory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/expense_categories" />
+    <!-- EditText cho địa điểm khoản chi tiêu -->
+    <EditText
+        android:id="@+id/editTextExpenseLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="16dp"
+        android:hint="Địa điểm" />
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switchExpensePaid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Đã trả" />
+    <!-- Spinner cho danh mục khoản chi tiêu -->
+    <Spinner
+        android:id="@+id/spinnerExpenseCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/expense_categories" />
 
+    <!-- SwitchCompat để chỉ ra nếu khoản chi tiêu đã trả -->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchExpensePaid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đã trả" />
+
+    <!-- Nút để thêm khoản chi tiêu -->
     <Button
         android:id="@+id/buttonAddExpense"
         android:layout_width="match_parent"
@@ -75,5 +95,4 @@
         android:layout_marginTop="32dp"
         android:layout_marginRight="16dp"
         android:text="Thêm" />
-
 </LinearLayout>
